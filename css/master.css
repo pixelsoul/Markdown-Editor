@@ -58,7 +58,7 @@ a:hover, a:active{
   cursor: pointer;
   display: block;
   background: var(--sidebarbg);
-  color: var(--light);
+  color: var(--primary);
   width: 100%;
   border:none;
   padding: 10px;

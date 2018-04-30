@@ -102,7 +102,9 @@ new Vue({
     },
     // character count
     charactersCount(){
-      return this.selectedNote.content.split(' ').length
+      console.log(this.selectedNote.content.length)
+      return this.selectedNote.content.split('').length
+
     },
   },
 
