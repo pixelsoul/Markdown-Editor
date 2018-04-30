@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Notebook</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/normalize.css">
+  <link rel="stylesheet" href="/css/master.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+<body>
+  <!-- Vue.js -->
+  <script src="https://unpkg.com/vue/dist/vue.js" charset="utf-8"></script>
+  <!-- marked library -->
+  <script src="https://unpkg.com/marked" charset="utf-8"></script>
+
+  <div id="notebook">
+
+    <!-- note list -->
+    <aside class="side-bar">
+      <div class="toolbar">
+        <button @click="addNote" :title="addButtonTitle" class="add-button"><i class="material-icons">add</i>Add Note</button>
+      </div>
+      <div class="notes">
+        <!--note list-->
+        <div class="note" v-for="note of notes" @click="selectNote(note)" :class="{selected: note === selectedNote}">{{ note.title }}</div>
+      </div>
+
+    </aside>
+
+    <template v-if="selectedNote">
+      <!-- main pane -->
+      <section class="main">
+        <div class="toolbar">
+          <input v-model="selectedNote.title" placeholder="Note Title" class="title-field" type="text">
+          <button @click="removeNote" title="Remove Note" class="delete-button"><i class="material-icons">delete</i></button>
+        </div>
+
+        <textarea v-model="selectedNote.content"></textarea>
+      </section>
+
+      <!-- preview pane -->
+      <aside class="preview" v-html="notePreview"></aside>
+    </template>
+
+  <div class="stretcher"></div>
+  </div>
+
+  <script src="/js/script.js" charset="utf-8"></script>
+</body>
+</html>

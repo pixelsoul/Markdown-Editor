@@ -1,0 +1,114 @@
+:root{
+  --primary:rgb(193, 79, 176);
+  --mainbg: #222;
+  --sidebarbg: #292728;
+  --dark-divide: #303030;
+  --light: #FEFEFE;
+
+  --global-font: Helvetica;
+}
+
+body{
+  background: var(--mainbg);
+  color:var(--light);
+  font-family: var(--global-font);
+
+}
+
+a{
+  color:var(--primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover, a:active{
+  text-decoration: underline;
+}
+
+.add-button{
+  display: block;
+  background: var(--sidebarbg);
+  color: var(--light);
+  width: 100%;
+  border:none;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-bottom:solid 1px var(--mainbg);
+}
+
+.delete-button{
+  background: var(--mainbg);
+  color: var(--light);
+  border: none;
+}
+
+#notebook{
+  width: 100vw;
+  height: 100vh;
+  background: var(--contentbg);
+  display: grid;
+  grid-template-columns: 300px minmax(200px, 1fr) minmax(200px, 1fr);
+  grid-gap: 10px;
+  grid-template-areas:
+  'side-bar main preview';
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.side-bar{
+  float:left;
+  background: var(--sidebarbg);
+  height: 100vh;
+  grid-area: side-bar;
+  grid-row: auto;
+  padding: 0;
+  text-align: center;
+  overflow: auto;
+}
+
+.side-bar > .notes > .note {
+  cursor: pointer;
+  padding:10px 10px;
+}
+
+.side-bar > .notes .selected{
+  background: var(--primary);
+  color:var(--light);
+}
+
+.main{
+  background: var(--mainbg);
+  grid-area: main;
+  padding: 10px;
+  border-right: dotted 1px var(--dark-divide);
+  height: 90vh;
+}
+
+.main > .toolbar {
+  margin:0 0 10px 0;
+}
+
+.main > textarea{
+  width: 100%;
+  height: 100%;
+  background: var(--mainbg);
+  color: var(--light);
+  border: none;
+  padding: 0px;
+}
+
+input[type=text]{
+  background: var(--mainbg);
+  color:var(--light);
+  font-size: 25px;
+  font-weight: 500;
+  border:none;
+  border-bottom: solid 1px var(--dark-divide);
+}
+
+.preview{
+  background: var(--mainbg);
+  grid-area: preview;
+  padding: 0px;
+  height: 100vh;
+}
