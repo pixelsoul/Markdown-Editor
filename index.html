@@ -16,17 +16,25 @@
   <script src="https://unpkg.com/vue/dist/vue.js" charset="utf-8"></script>
   <!-- marked library -->
   <script src="https://unpkg.com/marked" charset="utf-8"></script>
+  <!-- moment library -->
+  <script src="https://unpkg.com/moment" charset="utf-8"></script>
 
   <div id="notebook">
 
     <!-- note list -->
     <aside class="side-bar">
       <div class="toolbar">
+        <!-- add note -->
         <button @click="addNote" :title="addButtonTitle" class="add-button"><i class="material-icons">add</i>Add Note</button>
       </div>
       <div class="notes">
         <!--note list-->
-        <div class="note" v-for="note of notes" @click="selectNote(note)" :class="{selected: note === selectedNote}">{{ note.title }}</div>
+        <div class="note" v-for="note of sortedNotes"
+          :class="{selected: note === selectedNote}"
+          @click="selectNote(note)">
+              {{ note.title }}
+              <i class="icon material-icons star" v-if="note.favorite">star</i>
+        </div>
       </div>
 
     </aside>
@@ -35,11 +43,38 @@
       <!-- main pane -->
       <section class="main">
         <div class="toolbar">
+          <!-- note title -->
           <input v-model="selectedNote.title" placeholder="Note Title" class="title-field" type="text">
+          <!-- fav note -->
+          <button @click="favoriteNote" title="Favorite Note" class="favorite-button"><i class="material-icons"> {{ selectedNote.favorite ? 'star' : 'star_border' }}</i></button>
+          <!-- delete note -->
           <button @click="removeNote" title="Remove Note" class="delete-button"><i class="material-icons">delete</i></button>
         </div>
 
         <textarea v-model="selectedNote.content"></textarea>
+
+        <div class="toolbar status-bar">
+          <span class="date">
+            <span class="label">Created: </span>
+            <span class="value">{{ selectedNote.created | date }}</span>
+          </span>
+
+          <span class="lines">
+            <span class="label"> - Lines: </span>
+            <span class="value">{{ linesCount }}</span>
+          </span>
+
+          <span class="words">
+            <span class="label"> - Words: </span>
+            <span class="value">{{ wordsCount }}</span>
+          </span>
+
+          <span class="characters">
+            <span class="label"> - Characters: </span>
+            <span class="value">{{ charactersCount }}</span>
+          </span>
+
+        </div>
       </section>
 
       <!-- preview pane -->
@@ -49,6 +84,6 @@
   <div class="stretcher"></div>
   </div>
 
-  <script src="/js/script.js" charset="utf-8"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>
