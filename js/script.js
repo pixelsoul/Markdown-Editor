@@ -21,7 +21,7 @@ new Vue({
       const note = {
         id: String(time),
         title: 'New note ' + (this.notes.length + 1),
-        content: '**Hi!** this notebook is using [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for formatting!',
+        content: '**Hi!** this notebook is using [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for formatting! \n\r [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/6A5EpqqDOdk/0.jpg)](http://www.youtube.com/watch?v=6A5EpqqDOdk) \n\r ![sprinkle](https://media.giphy.com/media/xTiTnEHBh7qapyuvwQ/giphy.gif)',
         created: time,
         favorite: false,
       }
