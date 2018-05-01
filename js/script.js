@@ -30,6 +30,7 @@ new Vue({
 
     },
 
+    // delete note
     removeNote(){
       if (this.selectedNote && confirm('Delete the note?')) {
         const index = this.notes.indexOf(this.selectedNote)
@@ -39,8 +40,15 @@ new Vue({
       }
     },
 
+    // set favorite
     favoriteNote(){
       this.selectedNote.favorite = !this.selectedNote.favorite
+    },
+
+    // add gif image
+    addGif(){
+      alert('Not working right now')
+      console.log("add a gif image?")
     },
 
     // retrieve note
@@ -102,8 +110,10 @@ new Vue({
     },
     // character count
     charactersCount(){
-      console.log(this.selectedNote.content.length)
-      return this.selectedNote.content.split('').length
+      return this.selectedNote.content.replace(/\r\n|\r|\n/g, '').split('').length
+    },
+    // searchGiphy
+    searchGif(){
 
     },
   },

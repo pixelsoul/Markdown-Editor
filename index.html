@@ -47,6 +47,8 @@
           <input v-model="selectedNote.title" placeholder="Note Title" class="title-field" type="text">
           <!-- fav note -->
           <button @click="favoriteNote" title="Favorite Note" class="favorite-button"><i class="material-icons"> {{ selectedNote.favorite ? 'star' : 'star_border' }}</i></button>
+          <!-- add gif -->
+          <button @click="addGif" title="Add Gif" class="gif-button"><i class="material-icons">gif</i></button>
           <!-- delete note -->
           <button @click="removeNote" title="Remove Note" class="delete-button"><i class="material-icons">delete</i></button>
         </div>
@@ -79,9 +81,9 @@
 
       <!-- preview pane -->
       <aside class="preview" v-html="notePreview"></aside>
+      <!-- http://assemble.io/docs/Cheatsheet-Markdown.html -->
     </template>
 
-  <div class="stretcher"></div>
   </div>
 
   <script src="/js/script.js"></script>
