@@ -49,6 +49,8 @@
           <button @click="favoriteNote" title="Favorite Note" class="favorite-button"><i class="material-icons"> {{ selectedNote.favorite ? 'star' : 'star_border' }}</i></button>
           <!-- add gif -->
           <button @click="addGif" title="Add Gif" class="gif-button"><i class="material-icons">gif</i></button>
+          <!-- clear note -->
+          <button @click="clearNote" title="Clear Note" class="clear-button"><i class="material-icons">note</i></button>
           <!-- delete note -->
           <button @click="removeNote" title="Remove Note" class="delete-button"><i class="material-icons">delete</i></button>
         </div>

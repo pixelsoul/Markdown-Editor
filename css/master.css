@@ -25,7 +25,7 @@ a:hover, a:active{
   text-decoration: underline;
 }
 
-.delete-button, .favorite-button, .gif-button{
+.delete-button, .favorite-button, .gif-button, .clear-button{
   background: var(--mainbg);
   color: var(--light);
   border: none;

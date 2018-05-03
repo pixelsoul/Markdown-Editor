@@ -26,8 +26,6 @@ new Vue({
         favorite: false,
       }
       this.notes.push(note)
-      console.log(this.notes)
-
     },
 
     // delete note
@@ -37,6 +35,13 @@ new Vue({
         if (index !== -1) {
           this.notes.splice(index, 1)
         }
+      }
+    },
+
+    // clear note contents
+    clearNote(){
+      if(this.selectedNote && confirm('Clear note contents?')){
+        this.selectedNote.content = "";
       }
     },
 
@@ -114,7 +119,7 @@ new Vue({
     },
     // searchGiphy
     searchGif(){
-
+      //
     },
   },
 
