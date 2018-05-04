@@ -1,5 +1,6 @@
 :root{
   --primary:rgb(193, 79, 176);
+  /*--primary: #0cb698;*/
   --mainbg: #222;
   --sidebarbg: #292728;
   --dark-divide: #303030;
@@ -13,6 +14,10 @@ body{
   color:var(--light);
   font-family: var(--global-font);
 
+}
+
+hr{
+  border: dotted 1px var(--dark-divide);
 }
 
 a{

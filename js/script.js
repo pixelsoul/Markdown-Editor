@@ -63,7 +63,7 @@ new Vue({
 
     saveNotes(){
       localStorage.setItem('notes', JSON.stringify(this.notes))
-      console.log('Notes saved!', new Date())
+      //console.log('Notes saved!', new Date())
     },
 
     // report operation
