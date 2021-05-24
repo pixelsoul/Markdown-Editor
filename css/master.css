@@ -9,6 +9,8 @@
   --global-font: Helvetica;
 }
 
+:focus { outline: none; }
+
 body{
   background: var(--mainbg);
   color:var(--light);
