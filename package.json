@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "firebase": "^7.24.0",
     "vue-split-grid": "^0.8.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "firebase": "^8.6.7"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
